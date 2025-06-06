@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane fx:controller="ru.shift.client.view.ChatView"
+            xmlns:fx="http://javafx.com/fxml"
+            prefWidth="640" prefHeight="480">
+    <top>
+        <HBox spacing="5" BorderPane.alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="5" right="5" bottom="5" left="5"/>
+            </padding>
+
+            <Label text="Host:"/>
+            <TextField fx:id="hostField" text="localhost" prefWidth="100"/>
+
+            <Label text="Port:"/>
+            <TextField fx:id="portField" text="5555" prefWidth="60"/>
+
+            <Label text="Nick:"/>
+            <TextField fx:id="nickField" text="Guest" prefWidth="100"/>
+
+            <Label fx:id="nickErrorLabel" textFill="red" visible="false"/>
+
+            <Button fx:id="connectButton" text="Connect" onAction="#onConnect"/>
+        </HBox>
+    </top>
+
+    <center>
+        <SplitPane dividerPositions="0.75">
+            <TextArea fx:id="messageArea"
+                      editable="false" wrapText="true"/>
+
+            <ListView fx:id="usersView" prefWidth="120"/>
+        </SplitPane>
+    </center>
+
+    <bottom>
+        <HBox spacing="5" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="5" right="5" bottom="5" left="5"/>
+            </padding>
+
+            <TextField fx:id="inputField" HBox.hgrow="ALWAYS"/>
+            <Button fx:id="sendButton" text="Send" onAction="#onSend"/>
+        </HBox>
+    </bottom>
+</BorderPane>

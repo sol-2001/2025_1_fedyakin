@@ -1,0 +1,10 @@
+<configuration>
+    <appender name="STD" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss} %-5level [%thread] %logger - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <root level="INFO">
+        <appender-ref ref="STD"/>
+    </root>
+</configuration>
